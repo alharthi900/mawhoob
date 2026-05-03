@@ -243,91 +243,63 @@
         /* ===== MOBILE RESPONSIVE ===== */
         @media (max-width: 768px) {
 
-            body { padding: 8px; }
+            body { padding: 6px; }
+            .container { padding: 0 2px; }
 
-            .container { padding: 0 4px; }
-
-            /* Header - horizontal like desktop */
+            /* Header - exactly like desktop, just scaled */
             .top-header {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                padding: 8px 10px;
-                gap: 8px;
-            }
-            .header-icon { margin-right: auto !important; flex-shrink: 0; }
-            .header-icon img { height: 45px !important; width: auto !important; }
-            .header-text { text-align: right; flex: 1; }
-            .header-text h1 { font-size: 13px; line-height: 1.3; }
-            .header-text p { font-size: 12px; }
-
-            /* Cards */
-            .card { border-radius: 10px; margin-bottom: 12px; }
-            .card-header { padding: 12px 14px; }
-            .card-header h3 { font-size: 14px; }
-            .card-body { padding: 12px; }
-
-            /* Form grid - stack on mobile */
-            .form-grid {
-                grid-template-columns: 1fr !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                padding: 10px 12px !important;
                 gap: 10px;
             }
-            .field input, .field select {
-                font-size: 14px;
-                padding: 9px 12px;
-            }
+            .header-icon { margin-right: auto !important; flex-shrink: 0 !important; }
+            .header-icon img { height: 40px !important; width: auto !important; }
+            .header-text { text-align: right; flex: 1; min-width: 0; }
+            .header-text h1 { font-size: 14px !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+            .header-text p { font-size: 12px !important; }
 
-            /* Student & action tables - scrollable */
-            .data-table-wrapper, .card-body > div > table {
-                overflow-x: auto;
+            /* Cards */
+            .card { border-radius: 10px; margin-bottom: 10px; }
+            .card-header { padding: 10px 14px; }
+            .card-header h3 { font-size: 14px; }
+            .card-body { padding: 10px; }
+
+            /* Form grid - 3 columns like desktop but smaller */
+            .form-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 8px; }
+            .field label { font-size: 11px; }
+            .field input, .field select { font-size: 12px; padding: 7px 8px; }
+
+            /* Tables - scrollable horizontally */
+            #st-table, #ac-table {
                 display: block;
+                overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
-            }
-            .data-table { font-size: 11px; min-width: 500px; }
-            .data-table th, .data-table td { padding: 6px 8px; }
-            .data-table input, .data-table select {
                 font-size: 11px;
-                padding: 4px 6px;
-                min-width: 80px;
             }
+            .data-table th, .data-table td { padding: 5px 6px; }
+            .data-table input, .data-table select { font-size: 11px; padding: 3px 5px; min-width: 70px; }
 
-            /* Weakness / talent grid */
-            div[style*="grid-template-columns: repeat(3"] {
-                grid-template-columns: 1fr !important;
-            }
-            div[style*="grid-template-columns: repeat(2"] {
-                grid-template-columns: 1fr !important;
-            }
+            /* Weakness grid */
+            div[style*="grid-template-columns: repeat(3"] { grid-template-columns: repeat(2,1fr) !important; }
+            div[style*="grid-template-columns: repeat(2"] { grid-template-columns: repeat(2,1fr) !important; }
 
             /* Buttons */
-            .btn-add { width: 100%; margin-top: 8px; font-size: 13px; }
-            .btn-export {
-                width: 100%;
-                font-size: 15px;
-                padding: 14px 20px;
-            }
+            .btn-add { font-size: 12px; padding: 7px 12px; }
+            .btn-export { width: 100%; font-size: 15px; padding: 14px 20px; }
             .export-section { padding: 16px 8px; }
-
-            /* Bottom bar */
-            .bottom-bar {
-                flex-direction: column;
-                gap: 8px;
-                padding: 10px;
-            }
-
-            /* Quran parts input */
-            #quran-parts { width: 50px !important; }
-
-            /* Extra actions */
-            #extra-actions-container input[type=text] { font-size: 13px; }
         }
 
         @media (max-width: 480px) {
-            .top-header { padding: 10px 8px; }
-            .header-text h1 { font-size: 14px; }
-            .card-header h3 { font-size: 13px; }
-            .data-table { font-size: 10px; min-width: 420px; }
+            .header-text h1 { font-size: 12px !important; }
+            .header-text p { font-size: 11px !important; }
+            .header-icon img { height: 35px !important; }
+            .form-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 5px; }
+            .field input, .field select { font-size: 11px; padding: 6px 6px; }
         }
+
+        
     </style>
 </head>
 <body>
